@@ -2,8 +2,8 @@
 
 # Steps
 1. In **Github**, Create repo called **"AWS_hello"**
-2. Create **new SSH key** for **virtual environment** using command:**ssh-keygen -t rsa**
-3. Copy public key created and then in terminal type ```cat public_key_url```
+2. Create **new SSH key** for **virtual environment** using command(in terminal):**ssh-keygen -t rsa**
+3. Copy public key from terminal, then type ```cat public_key_url``` to get full path
 4. In Github, Go to **Profile,then Settings, SSH Keys, Add New, Add Key and Title then submit, Created new ssh key!**
 5. Go back to **AWS_hello repo** and hit enter and grab ssh code
 
