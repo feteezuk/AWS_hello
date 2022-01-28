@@ -46,7 +46,7 @@ all: install lint test
 **Add code :
    
 ```
-   def toyou(x):
+def toyou(x):
     return "hi %s" % x
 
 def add(x):
