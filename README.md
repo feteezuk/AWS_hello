@@ -1,3 +1,4 @@
+[![Python application test with Github Actions](https://github.com/feteezuk/AWS_hello/actions/workflows/main.yml/badge.svg)](https://github.com/feteezuk/AWS_hello/actions/workflows/main.yml)
 
 # Steps
 1. In **Github**, Create repo called **"AWS_hello"**
@@ -159,3 +160,12 @@ This code above says that everytime a push happens
 1. In Github, Go to **Actions**
 2. Github will run your code in the .yml file 
 3. Make sure the **python version** is correct. I received an error because python version 3.5 was written.
+4. There should be a green light if everything is working correctly. 
+5. If there is a red light, you can click to see exactl where the error is coming from.
+
+### TO GET STATUS BADGE
+1. In the **Actions** tab, click the 3 dots on the upper right 
+2. select **create status badge**
+3. Post this badge on top of the **Read Me** page
+
+
