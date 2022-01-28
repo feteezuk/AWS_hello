@@ -2,7 +2,7 @@
 # Steps
 1. In **Github**, Create repo called **"AWS_hello"**
 2. Create **new SSH key** for **virtual environment** using command:**ssh-keygen -t rsa**
-3. In Github, Go to **Profile,then Settings, SSH Keys, Add New, Add Key and Title then submit, Created new ssh key!
+3. In Github, Go to **Profile,then Settings, SSH Keys, Add New, Add Key and Title then submit, Created new ssh key!**
 4. Go back to **AWS_hello repo** and hit enter and grab ssh code
 
 ## Go to AWS TERMINAL
@@ -113,3 +113,49 @@ hint: (e.g., git pull ...) before pushing again
 ```
 
 ## SET UP GITHUB ACTION
+1. Go to Github repo **AWS_hello**, and click on Actions **TAB**
+2. Click **Set up a workflow yourself**
+3. Remove all the code within the **main.yaml** file
+4. Add the following code below to main.yaml
+5. Hit start commit, give title "initial config" and then hit "Commit New File"
+
+```
+name: Python application test with Github Actions
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.5
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.5
+    - name: Install dependencies
+      run: |
+        make install
+    - name: Lint with pylint
+      run: |
+        make lint
+    - name: Test with pytest
+      run: |
+        make test
+```
+
+This code above says that everytime a push happens
+1. run latest version of **ubunto**
+2. run latest version of **python**
+3. run **make install**
+4. run **make lint**
+5. run **make test**
+
+
+### 
+
+1. In Github, Go to **Actions**
+2. Github will run your code in the .yml file 
+3. Make sure the **python version** is correct. I received an error because python version 3.5 was written.
