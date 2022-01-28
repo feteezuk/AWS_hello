@@ -1,31 +1,27 @@
-# AWS_hello - 
 
-# Steps to Completion
-1. Create repo called "AWS_hello"
-2. Create new SSH key for virtual environment using command: ssh-keygen -t rsa
-3. Profile ==> Settings ==> SSH Keys ==> Add New ==> Add Key and Title then submit ==> Created new ssh key!
-4. Go back to AWS_hello repo and hit code and grab ssh code
-5.
+# Steps
+1. In **Github**, Create repo called **"AWS_hello"**
+2. Create **new SSH key** for **virtual environment** using command:**ssh-keygen -t rsa**
+3. In Github, Go to **Profile,then Settings, SSH Keys, Add New, Add Key and Title then submit, Created new ssh key!
+4. Go back to **AWS_hello repo** and hit enter and grab ssh code
 
 ## Go to AWS TERMINAL
 1. In terminal, 
-  a. cd /home/ec2-user/environment and press ENTER
-  b. git clone git@github.com:feteezuk/AWS_hello.git" and press ENTER
-  c. cd AWS_hello/
+	1. **cd /home/ec2-user/environment** and press ENTER
+  	2. **git clone git@github.com:feteezuk/AWS_hello.git** and press ENTER
+  	3. **cd AWS_hello/**
+
 ## Build Out Scaffolding - 
-#### Create following files: Makefile, hello.py, test_hello.py and requirements.txt
+#### Create following files: 
 1. touch Makefile
 2. touch hello.py
 3. touch test_hello.py
 4. touch requirements.txt
 
-# ls ==> Make sure you have these files 
-hello.py  Makefile  README.md  requirements.txt  test_hello.py
-
 IN AWS ENVIRONMENT, 
 
 # OPEN Makefile
-   **Add code :
+**Add code :
 ```
 install:
 	pip install --upgrade pip &&\
@@ -39,17 +35,17 @@ lint:
 	pylint --disable=R,C hello.py
 
 all: install lint test
+
 ```
 
-#SAVE FILE
+***SAVE FILE
 
 # OPEN hello.py
-   **Add code :
+**Add code :
    
-   ```
+```
    def toyou(x):
     return "hi %s" % x
-
 
 def add(x):
     return x + 1
@@ -57,50 +53,41 @@ def add(x):
 
 def subtract(x):
     return x - 1
-    ```
-   ** Then SAVE FILE
+```
+    
+***SAVE FILE
    
- # OPEN requirements.txt
-   **Add code :  
+# OPEN requirements.txt
+***Add code :  
    
-   ```
+```
    pytest
    pylint
-   ```
-   ** Then SAVE FILE
-   
- # OPEN requirements.txt
-   **Add code :  
-   
-   ```
-   pytest
-   pylint
-   ```
+```
+***SAVE FILE
 
- # OPEN test_hello.py
+# OPEN test_hello.py
    **Add code :  
    
 ```
   from hello import toyou, add, subtract
 
-
 def setup_function(function):
     print(" Running Setup: %s " % function.__name__)
     function.x = 10
 
-
 def teardown_function(function):
     print(" Running Teardown:%s" % function.__name__)
     del function.x
-
-
-### Run to see failed test
+    
+#Run to see failed test
 #def test_hello_add():
-#    assert add(test_hello_add.x) == 12
-```
+    #assert add(test_hello_add.x) == 12
+
 def test_hello_subtract():
     assert subtract(test_hello_subtract.x) == 9
 ```   
+
 ### Create Virtual Environment
 In terminal, type one line at a time 
 ```
@@ -122,6 +109,7 @@ In terminal, type one line at a time
 ``` Updates were rejected because the remote contains work that you do
 hint: not have locally. This is usually caused by another repository pushing
 hint: to the same ref. You may want to first integrate the remote changes
-hint: (e.g., git pull ...) before pushing again```
+hint: (e.g., git pull ...) before pushing again
+```
 
 ## SET UP GITHUB ACTION
